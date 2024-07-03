@@ -96,7 +96,7 @@ jobs:
     - name: Download vendor source
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
-        git clone ${{ env.VENDOR_SOURCE }} -b ${{ env.VENDOR_SOURCE_BRANCH }}  --depth=1
+        git clone https://github.com/realme-kernel-opensource/realmeQ3_Q3pro_AndroidS_vendor-source 
 
     - name: Download source boot image
       if: env.BUILD_BOOT_IMG == 'true'
