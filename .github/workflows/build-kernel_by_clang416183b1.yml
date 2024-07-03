@@ -92,6 +92,11 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/kernel_workspace
         git clone ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} android-kernel --depth=1
+        
+    - name: Download vendor source
+      run: |
+        cd $GITHUB_WORKSPACE/vendor_workspace
+        git clone ${{ env.VENDOR_SOURCE }} -b ${{ env.VENDOR_SOURCE_BRANCH }} android-kernel --depth=1
 
     - name: Download source boot image
       if: env.BUILD_BOOT_IMG == 'true'
